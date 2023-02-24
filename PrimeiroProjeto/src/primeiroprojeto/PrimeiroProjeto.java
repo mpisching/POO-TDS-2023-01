@@ -16,10 +16,10 @@ public class PrimeiroProjeto {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
-        System.out.print("Idade..........: ");
-        int idade = Integer.parseInt(entrada.nextLine());
         System.out.print("Nome...........: ");
         String nome = entrada.nextLine();
+        System.out.print("Idade..........: ");
+        int idade = Integer.parseInt(entrada.nextLine());
         System.out.print("Peso...........: ");
         float peso = Float.parseFloat(entrada.nextLine());
         System.out.print("Altura.........: ");
@@ -83,5 +83,6 @@ public class PrimeiroProjeto {
                            "Altura..........: " + altura + "\n" + 
                            "IMC.............: " + df.format(imc) + "\n" +
                            "Classificação...: " + classificacao + "\n");
+        
     }
 }
