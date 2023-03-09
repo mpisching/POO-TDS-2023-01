@@ -27,9 +27,11 @@ public class FXMLMainController implements Initializable {
     @FXML
     private Button buttonLimpar;
     @FXML
-    private TextField textFieldPrimeiroNome;
+    private TextField tfPrimeiroNome;
     @FXML
     private TextField textFieldUltimoNome;
+    @FXML
+    private TextField textFieldIdade;
 
     /**
      * Initializes the controller class.
@@ -41,14 +43,25 @@ public class FXMLMainController implements Initializable {
 
     @FXML
     private void handleButtonOk(ActionEvent event) {
-        String primeiroNome = textFieldPrimeiroNome.getText();
+        String primeiroNome = tfPrimeiroNome.getText();
         String ultimoNome = textFieldUltimoNome.getText();
+        int idade = Integer.parseInt(textFieldIdade.getText());
         String nomeCompleto = primeiroNome + " " + ultimoNome;
-        labelNomeCompleto.setText(nomeCompleto);
+        //labelNomeCompleto.setText(nomeCompleto);
+        if (idade >= 18) {
+            labelNomeCompleto.setText(nomeCompleto + " é de maior");
+        } else {
+            labelNomeCompleto.setText(nomeCompleto + " é de menor");
+        }
     }
 
     @FXML
     private void handleButtonLimpar(ActionEvent event) {
+        tfPrimeiroNome.setText("");
+        textFieldUltimoNome.clear();
+        textFieldIdade.clear();
+        labelNomeCompleto.setText("Nome completo...");
+        tfPrimeiroNome.requestFocus();
     }
     
 }

@@ -2,20 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
-package gui;
+package main;
 
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import utils.Utils;
 
 /**
  *
@@ -27,11 +25,13 @@ public class FXMain extends Application {
     public void start(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(
-                    getClass().getResource("FXMLMain.fxml"));
+                    getClass().getResource("/view/FXMLCalculoIMC.fxml"));
             
-            Scene scene = new Scene(root, 350, 212);
+            Scene scene = new Scene(root, 379, 250);
             
-            primaryStage.setTitle("Hello World!");
+            //primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../icons/IFSC_logo_vertical.png")));
+            primaryStage.getIcons().add(Utils.APPLICATION_ICON);
+            primaryStage.setTitle("Calculadora de IMC - IFSC");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
