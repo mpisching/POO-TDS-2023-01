@@ -4,8 +4,8 @@
  */
 package maintest;
 
-import entity.Categoria;
-import entity.Produto;
+import br.edu.ifsc.fln.model.domain.Categoria;
+import br.edu.ifsc.fln.model.domain.Produto;
 
 /**
  *
